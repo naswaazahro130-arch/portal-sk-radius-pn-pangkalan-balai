@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK Radius &amp; Panjar Biaya Perkara - PN Pangkalan Balai</title>
+    <style>
+        :root { --merah-utama:#800000; --merah-gelap:#5a0000; --kuning-emas:#FFD700; --kuning-muda:#FFF8DC; --teks-gelap:#2c3e50; --putih:#ffffff; }
+        body { font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; background:#f4f6f9; color:var(--teks-gelap); margin:0; padding:0; }
+        header { background:var(--merah-utama); color:var(--putih); border-bottom:5px solid var(--kuning-emas); padding:25px 20px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,.15); }
+        header h1 { margin:0; font-size:1.8rem; color:var(--kuning-emas); text-shadow:1px 1px 2px rgba(0,0,0,.5); }
+        header h2 { margin:8px 0 0; font-size:1.1rem; font-weight:400; }
+        .container { max-width:1100px; margin:30px auto; padding:0 20px; }
+        .drive-box { background:var(--kuning-muda); border:2px solid var(--kuning-emas); border-left:8px solid var(--merah-utama); border-radius:8px; padding:20px; margin-bottom:30px; display:flex; flex-direction:column; align-items:center; text-align:center; box-shadow:0 3px 8px rgba(0,0,0,.05); }
+        .drive-box h3 { margin-top:0; color:var(--merah-utama); }
+        .qr-card { background:var(--putih); padding:15px; border-radius:8px; border:2px solid var(--kuning-emas); box-shadow:0 2px 6px rgba(0,0,0,.1); margin:15px 0; }
+        .btn-drive { display:inline-block; background:var(--merah-utama); color:var(--kuning-emas); padding:12px 24px; font-weight:bold; text-decoration:none; border-radius:5px; border:1px solid var(--kuning-emas); transition:all .3s ease; margin-top:10px; }
+        .btn-drive:hover { background:var(--merah-gelap); color:var(--putih); }
+        .search-box { margin-bottom:25px; position:sticky; top:10px; z-index:100; }
+        .search-box input { width:100%; padding:15px; font-size:1rem; border:2px solid var(--merah-utama); border-radius:6px; box-sizing:border-box; outline:none; box-shadow:0 4px 10px rgba(0,0,0,.1); }
+        .table-section { background:var(--putih); border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,.08); margin-bottom:35px; }
+        .table-title { background:var(--merah-utama); color:var(--kuning-emas); padding:15px 20px; margin:0; font-size:1.2rem; border-bottom:3px solid var(--kuning-emas); }
+        table { width:100%; border-collapse:collapse; text-align:left; }
+        th { background:var(--kuning-emas); color:var(--merah-gelap); padding:12px 15px; font-weight:bold; border-bottom:2px solid var(--merah-utama); }
+        td { padding:10px 15px; border-bottom:1px solid #eee; font-size:.95rem; }
+        tr:nth-child(even) { background:var(--kuning-muda); }
+        .badge-radius { background:var(--merah-utama); color:var(--putih); padding:3px 6px; border-radius:4px; font-size:.8rem; font-weight:bold; }
+        footer { text-align:center; padding:20px; background:var(--merah-gelap); color:var(--putih); border-top:3px solid var(--kuning-emas); font-size:.9rem; }
+        @media (max-width:700px) { .container{padding:0 10px;} .table-section{overflow-x:auto;} table{min-width:650px;} header h1{font-size:1.35rem;} }
+    </style>
+</head>
+<body>
+<header>
+    <h1>PENGADILAN NEGERI PANGKALAN BALAI</h1>
+    <h2>Daftar Radius &amp; Rincian Panjar Biaya Perkara Perdata Tahun 2026</h2>
+</header>
+<div class="container">
+    <div class="drive-box">
+        <h3>📂 Akses Berkas Resmi SK Radius (Google Drive)</h3>
+        <p>Pindai Kode QR di bawah ini untuk melihat dokumen PDF resmi SK Radius PN Pangkalan Balai:</p>
+        <div class="qr-card"><div id="qrcode"></div></div>
+        <a href="https://drive.google.com/drive/folders/1iDVPUMUWPk5GFZo4j4gUlghmZJEUIHxg" target="_blank" rel="noopener" class="btn-drive">🔗 Buka Folder Google Drive</a>
+    </div>
+    <div class="search-box"><input type="text" id="searchInput" onkeyup="searchTable()" placeholder="🔍 Cari nama Desa, Kelurahan, atau Kecamatan di sini..."></div>
+    <div class="table-section">
+        <h3 class="table-title">I. DAFTAR RADIUS PERKARA PERDATA PERSATU KALI PANGGIL</h3>
+        <table><thead><tr><th>NO</th><th>RADIUS</th><th>JARAK</th><th>BIAYA</th><th>KETERANGAN</th></tr></thead><tbody>
+            <tr><td>1</td><td><span class="badge-radius">RADIUS I</span></td><td>1 KM s/d 15 KM</td><td>Rp 75.000</td><td>-</td></tr>
+            <tr><td>2</td><td><span class="badge-radius">RADIUS II</span></td><td>16 KM s/d 25 KM</td><td>Rp 125.000</td><td>-</td></tr>
+            <tr><td>3</td><td><span class="badge-radius">RADIUS III</span></td><td>26 KM s/d 40 KM</td><td>Rp 150.000</td><td>-</td></tr>
+            <tr><td>4</td><td><span class="badge-radius">RADIUS IV</span></td><td>41 KM s/d 60 KM</td><td>Rp 200.000</td><td>-</td></tr>
+            <tr><td>5</td><td><span class="badge-radius">RADIUS V</span></td><td>61 KM s/d 90 KM</td><td>Rp 250.000</td><td>-</td></tr>
+            <tr><td>6</td><td><span class="badge-radius">RADIUS VI</span></td><td>&gt; 90 KM</td><td>Rp 300.000</td><td>-</td></tr>
+            <tr><td>7</td><td><span class="badge-radius">SULIT I</span></td><td>-</td><td>Rp 500.000</td><td>Jalan berlumpur, kendaraan roda 4/sewa motor</td></tr>
+            <tr><td>8</td><td><span class="badge-radius">SULIT II</span></td><td>-</td><td>Rp 600.000</td><td>Jalan berlumpur, kendaraan roda 4/sewa motor/perahu</td></tr>
+            <tr><td>9</td><td><span class="badge-radius">SANGAT SULIT</span></td><td>-</td><td>Rp 800.000</td><td>Kendaraan roda 4, sewa motor, perahu motor, menginap</td></tr>
+        </tbody></table>
+    </div>
+    <div class="table-section">
+        <h3 class="table-title">II. DAFTAR BIAYA PANGGILAN PERKARA BERDASARKAN WILAYAH DESA/KECAMATAN</h3>
+        <table id="radiusTable"><thead><tr><th>KECAMATAN</th><th>KELURAHAN</th><th>DESA</th><th>BIAYA PANGGILAN</th><th>KETERANGAN</th></tr></thead><tbody>
+            <tr><td>BANYUASIN III</td><td>-</td><td>GALANG TINGGI</td><td>Rp 300.000</td><td><span class="badge-radius">Radius VI</span></td></tr>
+            <tr><td>BANYUASIN III</td><td>KAYUARA KUNING</td><td>-</td><td>Rp 75.000</td><td><span class="badge-radius">Radius I</span></td></tr>
+            <tr><td>BANYUASIN III</td><td>KEDONDONG RAYE</td><td>-</td><td>Rp 75.000</td><td><span class="badge-radius">Radius I</span></td></tr>
+            <tr><td>BANYUASIN III</td><td>-</td><td>LANGKAN</td><td>Rp 125.000</td><td><span class="badge-radius">Radius II</span></td></tr>
+            <tr><td>BANYUASIN III</td><td>-</td><td>LUBUK SAUNG</td><td>Rp 125.000</td><td><span class="badge-radius">Radius II</span></td></tr>
+            <tr><td>BANYUASIN III</td><td>MULYA AGUNG</td><td>-</td><td>Rp 125.000</td><td><span class="badge-radius">Radius II</span></td></tr>
+            <tr><td>BANYUASIN III</td><td>PANGKALAN BALAI</td><td>-</td><td>Rp 75.000</td><td><span class="badge-radius">Radius I</span></td></tr>
+            <tr><td>BANYUASIN III</td><td>-</td><td>PANGKALAN PANJI</td><td>Rp 125.000</td><td><span class="badge-radius">Radius II</span></td></tr>
+            <tr><td>BANYUASIN III</td><td>SETERIO</td><td>-</td><td>Rp 125.000</td><td><span class="badge-radius">Radius II</span></td></tr>
+            <tr><td>BANYUASIN III</td><td>-</td><td>SUKA SUKARAJA BARU</td><td>Rp 150.000</td><td><span class="badge-radius">Radius III</span></td></tr>
+            <tr><td>BETUNG</td><td>BETUNG</td><td>-</td><td>Rp 200.000</td><td><span class="badge-radius">Radius IV</span></td></tr>
+            <tr><td>BETUNG</td><td>RIMBA ASEM</td><td>-</td><td>Rp 200.000</td><td><span class="badge-radius">Radius IV</span></td></tr>
+            <tr><td>BETUNG</td><td>-</td><td>BUKIT</td><td>Rp 250.000</td><td><span class="badge-radius">Radius V</span></td></tr>
+            <tr><td>BETUNG</td><td>-</td><td>TALANG JAYA RAYA I</td><td>Rp 500.000</td><td><span class="badge-radius">Sulit I</span></td></tr>
+            <tr><td>BETUNG</td><td>-</td><td>TALANG JAYA RAYA II</td><td>Rp 500.000</td><td><span class="badge-radius">Sulit I</span></td></tr>
+            <tr><td>SEMBAWA</td><td>-</td><td>LALANG SEMBAWA</td><td>Rp 150.000</td><td><span class="badge-radius">Radius III</span></td></tr>
+            <tr><td>SEMBAWA</td><td>-</td><td>MAINAN</td><td>Rp 150.000</td><td><span class="badge-radius">Radius III</span></td></tr>
+            <tr><td>SEMBAWA</td><td>-</td><td>PURWOSARI</td><td>Rp 250.000</td><td><span class="badge-radius">Radius V</span></td></tr>
+            <tr><td>PULAU RIMAU</td><td>-</td><td>BANJAR SARI (AIR SENDA IV)</td><td>Rp 800.000</td><td><span class="badge-radius">Sangat Sulit</span></td></tr>
+            <tr><td>PULAU RIMAU</td><td>-</td><td>BUKIT SARI</td><td>Rp 800.000</td><td><span class="badge-radius">Sangat Sulit</span></td></tr>
+            <tr><td>PULAU RIMAU</td><td>-</td><td>DANA MULYA</td><td>Rp 800.000</td><td><span class="badge-radius">Sangat Sulit</span></td></tr>
+            <tr><td>PULAU RIMAU</td><td>-</td><td>MUKUT</td><td>Rp 800.000</td><td><span class="badge-radius">Sangat Sulit</span></td></tr>
+            <tr><td>PULAU RIMAU</td><td>-</td><td>SUMBER REJEKI</td><td>Rp 800.000</td><td><span class="badge-radius">Sangat Sulit</span></td></tr>
+            <tr><td>MUARA PADANG</td><td>-</td><td>AIR GADING</td><td>Rp 800.000</td><td><span class="badge-radius">Sangat Sulit</span></td></tr>
+            <tr><td>MUARA PADANG</td><td>-</td><td>MUARA PADANG</td><td>Rp 800.000</td><td><span class="badge-radius">Sangat Sulit</span></td></tr>
+            <tr><td>MUARA PADANG</td><td>-</td><td>PURWODADI</td><td>Rp 800.000</td><td><span class="badge-radius">Sangat Sulit</span></td></tr>
+            <tr><td>TALANG KELAPA</td><td>GASING</td><td>-</td><td>Rp 300.000</td><td><span class="badge-radius">Radius VI</span></td></tr>
+            <tr><td>TALANG KELAPA</td><td>AIR BATU</td><td>-</td><td>Rp 200.000</td><td><span class="badge-radius">Radius IV</span></td></tr>
+            <tr><td>TALANG KELAPA</td><td>KENTEN</td><td>-</td><td>Rp 200.000</td><td><span class="badge-radius">Radius IV</span></td></tr>
+            <tr><td>TALANG KELAPA</td><td>SUKAJADI</td><td>-</td><td>Rp 200.000</td><td><span class="badge-radius">Radius IV</span></td></tr>
+            <tr><td>SUAK TAPEH</td><td>-</td><td>AIR SENGGERIS</td><td>Rp 250.000</td><td><span class="badge-radius">Radius V</span></td></tr>
+            <tr><td>SUAK TAPEH</td><td>-</td><td>BENGKUANG</td><td>Rp 250.000</td><td><span class="badge-radius">Radius V</span></td></tr>
+            <tr><td>SUAK TAPEH</td><td>-</td><td>LUBUK LANCHANG</td><td>Rp 200.000</td><td><span class="badge-radius">Radius IV</span></td></tr>
+        </tbody></table>
+    </div>
+    <div class="table-section">
+        <h3 class="table-title">III. RINCIAN PANJAR BIAYA PERKARA GUGATAN / BANTAHAN / PERLAWANAN</h3>
+        <table><thead><tr><th>NO</th><th>RINCIAN PERUNTUKAN</th><th>RINCIAN BIAYA</th></tr></thead><tbody>
+            <tr><td>1</td><td>Biaya Pendaftaran (PNBP)</td><td>Rp 30.000</td></tr>
+            <tr><td>2</td><td>Biaya Redaksi</td><td>Rp 10.000</td></tr>
+            <tr><td>3</td><td>Biaya Materai</td><td>Rp 10.000</td></tr>
+            <tr><td>4</td><td>Biaya Proses (ATK)</td><td>Rp 100.000</td></tr>
+            <tr><td>5</td><td>Biaya Panggilan/Pemberitahuan (disesuaikan radius)</td><td>4 P + 5 T</td></tr>
+            <tr><td>6</td><td>Biaya PNBP Relaas Panggilan Pertama &amp; Pemberitahuan Putusan (4 x Rp 10.000)</td><td>Rp 40.000</td></tr>
+        </tbody></table>
+    </div>
+    <div class="table-section">
+        <h3 class="table-title">IV. RINCIAN PANJAR BIAYA PERKARA PERMOHONAN</h3>
+        <table><thead><tr><th>NO</th><th>RINCIAN PERUNTUKAN</th><th>RINCIAN BIAYA</th></tr></thead><tbody>
+            <tr><td>1</td><td>Biaya Pendaftaran (PNBP)</td><td>Rp 30.000</td></tr>
+            <tr><td>2</td><td>Biaya Redaksi</td><td>Rp 10.000</td></tr>
+            <tr><td>3</td><td>Biaya Materai</td><td>Rp 10.000</td></tr>
+            <tr><td>4</td><td>Biaya Proses (ATK)</td><td>Rp 100.000</td></tr>
+            <tr><td>5</td><td>Biaya Panggilan/Pemberitahuan (disesuaikan radius)</td><td>2 P</td></tr>
+            <tr><td>6</td><td>Biaya PNBP Relaas Panggilan Pertama (2 x Rp 10.000)</td><td>Rp 20.000</td></tr>
+        </tbody></table>
+    </div>
+</div>
+<footer>&copy; 2026 Pengadilan Negeri Pangkalan Balai - Mahkamah Agung Republik Indonesia</footer>
+<script>
+window.onload = function() {
+    var driveUrl = "https://drive.google.com/drive/folders/1iDVPUMUWPk5GFZo4j4gUlghmZJEUIHxg";
+    var qrContainer = document.getElementById("qrcode");
+    var img = document.createElement("img");
+    img.src = "https://api.qrserver.com/v1/create-qr-code/?size=180x180&color=800000&data=" + encodeURIComponent(driveUrl);
+    img.alt = "QR Code SK Radius"; img.style.width = "180px"; img.style.height = "180px";
+    qrContainer.appendChild(img);
+};
+function searchTable() {
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toUpperCase();
+    var table = document.getElementById("radiusTable");
+    var tr = table.getElementsByTagName("tr");
+    for (var i = 1; i < tr.length; i++) {
+        var td = tr[i].getElementsByTagName("td"); var found = false;
+        for (var j = 0; j < td.length; j++) {
+            if (td[j]) {
+                var txtValue = td[j].textContent || td[j].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) { found = true; break; }
+            }
+        }
+        tr[i].style.display = found ? "" : "none";
+    }
+}
+</script>
+</body>
+</html>
